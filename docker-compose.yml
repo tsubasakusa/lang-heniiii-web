@@ -1,0 +1,17 @@
+services:
+  frontend:
+    image: ghcr.io/tsubasakusa/lang-heniiii-web/frontend:latest
+    networks:
+      - blog
+    restart: unless-stopped
+
+  backend:
+    image: ghcr.io/tsubasakusa/lang-heniiii-web/backend:latest
+    networks:
+      - blog
+    restart: unless-stopped
+
+networks:
+  blog:
+    external: true
+    name: itsour-blog_default
